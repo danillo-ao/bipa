@@ -25,6 +25,7 @@
       "@configs/*": ["./src/configs/*"],
       "@lib/*": ["./src/lib/*"],
       "@screens/*": ["./src/screens/*"],
+      "@sdk/*": ["./src/sdk/*"],
       "@theme/*": ["./src/theme/*"],
       "@utils/*": ["./src/utils/*"]
     }

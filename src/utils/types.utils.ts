@@ -9,3 +9,7 @@ export type DotNotation<T extends Record<string, any>, Prefix extends string = '
 // LAYOUT TYPES
 
 export type RootLayoutProps = Readonly<{ children: React.ReactNode }>;
+
+export interface ScreenController<T> {
+  (props: { children(args: T): React.ReactNode }): React.ReactNode;
+}

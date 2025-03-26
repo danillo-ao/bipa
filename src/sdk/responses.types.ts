@@ -1,4 +1,4 @@
-export interface LightningConnectivityRankingResponse {
+export interface LightningConnectivityRankingData {
   publicKey: string;
   alias: string;
   channels: number;

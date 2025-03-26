@@ -18,6 +18,7 @@ module.exports = {
     '^@configs/(.*)$',
     '^@lib/(.*)$',
     '^@screens/(.*)$',
+    '^@sdk/(.*)$',
     '^@theme/(.*)$',
     '^@utils/(.*)$',
     '^[./]',

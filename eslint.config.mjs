@@ -21,6 +21,7 @@ const eslintConfig = [
     },
     rules: {
       'prettier/prettier': 'error',
+      'react-hooks/exhaustive-deps': 'off',
       '@typescript-eslint/no-empty-object-type': 'off',
     },
   }),

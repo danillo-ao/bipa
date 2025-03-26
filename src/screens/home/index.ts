@@ -1,2 +1,2 @@
-export * from './home.screen'
-export * from './home.types'
+export * from './home.screen';
+export * from './home.types';
