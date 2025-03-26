@@ -19,11 +19,11 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"],
       "@app/*": ["./src/app/*"],
       "@assets/*": ["./src/assets/*"],
       "@components/*": ["./src/components/*"],
       "@configs/*": ["./src/configs/*"],
+      "@lib/*": ["./src/lib/*"],
       "@screens/*": ["./src/screens/*"],
       "@theme/*": ["./src/theme/*"],
       "@utils/*": ["./src/utils/*"]

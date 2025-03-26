@@ -1,0 +1,15 @@
+export const themeSpaces = {
+  xs: '4px',
+  sm: '8px',
+  md: '16px',
+  lg: '24px',
+  xl: '32px',
+  '2xl': '40px',
+  '3xl': '50px',
+  '4xl': '60px',
+  '5xl': '70px',
+  '6xl': '80px',
+  '7xl': '80px',
+  '8xl': '90px',
+  '9xl': '100px',
+};
