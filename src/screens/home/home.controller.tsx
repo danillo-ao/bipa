@@ -2,9 +2,10 @@
 
 import React from 'react';
 
+import { AxiosError } from 'axios';
+
 import { apiClient } from '@sdk/client';
 import { LightningConnectivityRankingData } from '@sdk/responses.types';
-import { AxiosError } from 'axios';
 
 import { ScreenController } from '@utils/types.utils';
 
