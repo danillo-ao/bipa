@@ -131,3 +131,45 @@ export const NodeDataValueSats = styled.span`
     color: ${getThemeColor('text.lighter')};
   }
 `;
+
+export const ErrorCard = styled.div`
+  width: 100%;
+  max-width: 350px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: ${getThemeSpace('xl')};
+  flex-direction: column;
+  margin: ${getThemeSpace('xl')} auto;
+
+  &:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: ${getThemeColor('grey.300')};
+    z-index: -1;
+    border-radius: ${getThemeRadii('lg')};
+    opacity: 0.4;
+  }
+`;
+
+export const ErrorCardMessage = styled.span`
+  width: 100%;
+  text-align: center;
+  position: relative;
+  color: ${getThemeColor('text.warning')};
+`;
+
+export const ErrorCardCode = styled.span`
+  width: 100%;
+  padding: ${getThemeSpace('md')};
+  background-color: ${getThemeColor('text.danger')};
+  text-align: center;
+  position: relative;
+  margin-top: ${getThemeSpace('md')};
+  border-radius: ${getThemeRadii('md')};
+`;

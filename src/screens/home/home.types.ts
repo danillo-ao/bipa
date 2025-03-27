@@ -8,6 +8,7 @@ export interface HomeScreenControllerArgs {
   };
   data: LightningConnectivityRankingData[];
   filter: string;
+  filtering: boolean;
 
   actions: {
     getNodeCountryLabel(node: LightningConnectivityRankingData): string;

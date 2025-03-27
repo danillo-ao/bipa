@@ -25,6 +25,7 @@ const HomeScreenController: ScreenController<HomeScreenControllerArgs> = ({ chil
   const [originalData, setOriginalData] = React.useState<LightningConnectivityRankingData[]>([]);
 
   const [filter, setFilter] = React.useState<string>('');
+  const [filtering, setFiltering] = React.useState<boolean>(false);
 
   // Handle states functions
 
@@ -48,6 +49,7 @@ const HomeScreenController: ScreenController<HomeScreenControllerArgs> = ({ chil
   const filterData = useDebounce((value: string) => {
     if (!value || value.length <= 0) {
       setData(originalData);
+      setFiltering(false);
       return;
     }
 
@@ -55,6 +57,7 @@ const HomeScreenController: ScreenController<HomeScreenControllerArgs> = ({ chil
 
     const filtered = originalData.filter(node => node.alias.toLowerCase().includes(_value) || node.publicKey.toLowerCase().includes(_value));
     setData(filtered);
+    setFiltering(true);
   }, 400);
 
   // Fetch requests
@@ -105,6 +108,7 @@ const HomeScreenController: ScreenController<HomeScreenControllerArgs> = ({ chil
     },
     data,
     filter,
+    filtering,
 
     actions: {
       getNodeCountryLabel,
