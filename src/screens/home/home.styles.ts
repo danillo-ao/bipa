@@ -10,6 +10,7 @@ export const HomeScreenWrapper = styled.div`
   justify-content: center;
   flex-direction: column;
   padding: 10vh 0;
+  flex: 1;
 `;
 
 export const HomeScreenTitle = styled.h1`

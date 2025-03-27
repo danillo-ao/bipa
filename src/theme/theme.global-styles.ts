@@ -14,8 +14,11 @@ export const ThemeGlobalStyles = createGlobalStyle`
     padding: 0;
     width: 100vw;
     max-width: 100vw;
+    min-height: 100vh;
     overflow-x: hidden;
     font-weight: normal;
+    display: flex;
+    flex-direction: column;
 
     background-color: ${getThemeColor('background.base')};
   }

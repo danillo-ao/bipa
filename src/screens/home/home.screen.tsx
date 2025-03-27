@@ -7,6 +7,7 @@ import Image from 'next/image';
 import errorImg from '@assets/imgs/error.png';
 import notFoundImg from '@assets/imgs/not-found.png';
 
+import { Footer } from '@components/footer';
 import { SearchInput } from '@components/form';
 import { ScreenWrapper } from '@components/screen';
 
@@ -89,25 +90,31 @@ const HomeScreen: React.FC<HomeScreenProps> = () => {
   };
 
   return (
-    <ScreenWrapper>
-      <HomeScreenController>
-        {args => {
-          return (
-            <S.HomeScreenWrapper>
-              <S.HomeScreenTitle>lightning nodes ranking</S.HomeScreenTitle>
+    <>
+      <S.HomeScreenWrapper>
+        <ScreenWrapper>
+          <HomeScreenController>
+            {args => {
+              return (
+                <>
+                  <S.HomeScreenTitle>lightning nodes ranking</S.HomeScreenTitle>
 
-              <S.HomeScreenListWrapper>
-                <S.HomeScreenListSearch>
-                  <SearchInput value={args.filter} placeholder="Filtrar node..." onChange={args.actions.onChangeFilter} />
-                </S.HomeScreenListSearch>
+                  <S.HomeScreenListWrapper>
+                    <S.HomeScreenListSearch>
+                      <SearchInput value={args.filter} placeholder="Filtrar node..." onChange={args.actions.onChangeFilter} />
+                    </S.HomeScreenListSearch>
 
-                <S.HomeScreenList>{renderListData(args)}</S.HomeScreenList>
-              </S.HomeScreenListWrapper>
-            </S.HomeScreenWrapper>
-          );
-        }}
-      </HomeScreenController>
-    </ScreenWrapper>
+                    <S.HomeScreenList>{renderListData(args)}</S.HomeScreenList>
+                  </S.HomeScreenListWrapper>
+                </>
+              );
+            }}
+          </HomeScreenController>
+        </ScreenWrapper>
+      </S.HomeScreenWrapper>
+
+      <Footer />
+    </>
   );
 };
 export { HomeScreen };
