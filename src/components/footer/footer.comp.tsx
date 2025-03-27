@@ -11,7 +11,9 @@ const Footer: React.FC<FooterProps> = () => {
       <ScreenWrapper>
         <S.FooterInner>
           {/**/}
-          <S.FooterName>danillo alves de oliveira</S.FooterName>
+          <S.FooterName href="https://danillo.dev/" target="_blank">
+            danillo alves de oliveira
+          </S.FooterName>
           {/**/}
         </S.FooterInner>
       </ScreenWrapper>

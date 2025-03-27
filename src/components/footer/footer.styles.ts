@@ -18,13 +18,13 @@ export const FooterInner = styled.div`
 
 export const FooterName = styled.a`
   position: relative;
+  color: ${getThemeColor('text.primary')};
 
   ${getThemeFontFamily('brand')};
   ${getThemeFontSize('lg')};
   ${getThemeTransition('base')}
 
   &:hover {
-    color: ${getThemeColor('text.primary')};
     text-shadow:
       1px 1px 10px ${getThemeColor('secondary')},
       -1px -1px 10px ${getThemeColor('secondary')};

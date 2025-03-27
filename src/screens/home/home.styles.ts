@@ -19,6 +19,10 @@ export const HomeScreenTitle = styled.h1`
 
   ${getThemeFontFamily('brand')};
   ${getThemeFontSize('xl')};
+
+  @media (max-width: 450px) {
+    ${getThemeFontSize('lg')};
+  }
 `;
 
 export const HomeScreenListWrapper = styled.div`
@@ -68,6 +72,10 @@ export const HomeScreenListItem = styled.div`
       color: ${getThemeColor('primary')};
     }
   }
+
+  @media (max-width: 980px) {
+    flex-direction: column;
+  }
 `;
 
 export const NodeNameWrapper = styled.div`
@@ -75,6 +83,14 @@ export const NodeNameWrapper = styled.div`
   position: relative;
   display: flex;
   overflow: hidden;
+
+  @media (max-width: 1070px) {
+    width: 200px;
+  }
+
+  @media (max-width: 980px) {
+    width: 100%;
+  }
 `;
 
 export const NodeName = styled.h3`
@@ -87,6 +103,10 @@ export const NodeName = styled.h3`
   ${getThemeTransition('base')};
   ${getThemeFontFamily('title')};
   ${getThemeFontSize('md')};
+
+  @media (max-width: 980px) {
+    ${getThemeFontSize('lg')};
+  }
 `;
 
 export const NodeDataWrapper = styled.div`
@@ -95,6 +115,14 @@ export const NodeDataWrapper = styled.div`
   position: relative;
   grid-template-columns: 1fr 0.4fr 1fr 1fr 1fr 0.7fr;
   gap: ${getThemeSpace('sm')};
+
+  @media (max-width: 800px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: 520px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 export const NodeDataColumn = styled.div`
@@ -118,6 +146,10 @@ export const NodeDataTitle = styled.span`
 export const NodeDataValue = styled.span`
   position: relative;
   display: flex;
+
+  @media (max-width: 350px) {
+    ${getThemeFontSize('sm')};
+  }
 `;
 
 export const NodeDataValueSats = styled.span`
@@ -131,6 +163,10 @@ export const NodeDataValueSats = styled.span`
     ${getThemeFontSize('2xs')};
     font-weight: bold;
     color: ${getThemeColor('text.lighter')};
+  }
+
+  @media (max-width: 350px) {
+    ${getThemeFontSize('sm')};
   }
 `;
 
