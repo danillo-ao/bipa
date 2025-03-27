@@ -1,4 +1,5 @@
 import { Exo_2, Lato } from 'next/font/google';
+import localFont from 'next/font/local';
 
 const lato = Lato({
   weight: ['300', '400', '700', '900'],
@@ -10,9 +11,20 @@ const exo = Exo_2({
   subsets: ['latin'],
 });
 
+const brandFont = localFont({
+  src: [
+    {
+      path: '../../assets/fonts/leixo.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+  ],
+});
+
 const themeFontFamily = {
   base: lato.style.fontFamily,
   title: exo.style.fontFamily,
+  brand: brandFont.style.fontFamily,
 };
 
 const themeFontSize = {

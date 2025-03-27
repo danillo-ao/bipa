@@ -91,6 +91,7 @@ const commonColors = {
 
 const baseColors = {
   primary: '#F7931A',
+  secondary: '#09a3ba',
   white: '#FFFFFF',
   black: '#000000',
   transparent: 'transparent',
@@ -98,7 +99,7 @@ const baseColors = {
 
 const textColors = {
   primary: '#EEEEEE',
-  lighter: '#8c8c8c',
+  lighter: commonColors.grey['600'],
   disabled: commonColors.grey['500'],
   danger: commonColors.red['600'],
   warning: commonColors.yellow['700'],

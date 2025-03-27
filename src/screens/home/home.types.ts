@@ -7,6 +7,10 @@ export interface HomeScreenControllerArgs {
     message: string | null | undefined;
   };
   data: LightningConnectivityRankingData[];
+
+  actions: {
+    getNodeCountryLabel(node: LightningConnectivityRankingData): string;
+  };
 }
 
 export interface HomeScreenProps {}

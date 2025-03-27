@@ -2,6 +2,9 @@
 
 // COMMON TYPES
 
+/**
+ * reference: https://dev.to/calebpitan/dot-notation-type-accessor-in-typescript-136j
+ */
 export type DotNotation<T extends Record<string, any>, Prefix extends string = ''> = {
   [K in Extract<keyof T, string>]: T[K] extends Record<string, any> ? `${Prefix}${K}` | DotNotation<T[K], `${Prefix}${K}.`> : `${Prefix}${K}`;
 }[Extract<keyof T, string>];

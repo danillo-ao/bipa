@@ -47,6 +47,10 @@ const HomeScreenController: ScreenController<HomeScreenControllerArgs> = ({ chil
     }
   };
 
+  const getNodeCountryLabel = (node: LightningConnectivityRankingData) => {
+    return node.country?.['pt-BR'] ?? node.country?.['en'] ?? '--';
+  };
+
   // use effects
   React.useEffect(() => {
     fetchLightningRankingsConnectivity();
@@ -60,6 +64,10 @@ const HomeScreenController: ScreenController<HomeScreenControllerArgs> = ({ chil
       message: errorMessage,
     },
     data,
+
+    actions: {
+      getNodeCountryLabel,
+    },
   };
 
   return children(args);
