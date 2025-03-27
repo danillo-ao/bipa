@@ -2,25 +2,26 @@
 ## Libraries & frameworks used
 frameworks:
 
-● [NextJS](https://nextjs.org/)
-● [React](https://react.dev/ "React")
+• [NextJS](https://nextjs.org/)
+• [React](https://react.dev/ "React")
 
 libraries:
 
-● [axios](https://www.npmjs.com/package/axios "axios")
-● [tabler-icons](https://tabler.io/icons "tabler icons")
-● [react-hot-toast](https://react-hot-toast.com/docs "react hot toast")
-● [react-loading-skeleton](https://www.npmjs.com/package/react-loading-skeleton "react loading skeleton")
-● [styled-components](https://styled-components.com/ "styled components")
+• [axios](https://www.npmjs.com/package/axios "axios")
+• [tabler-icons](https://tabler.io/icons "tabler icons")
+• [react-hot-toast](https://react-hot-toast.com/docs "react hot toast")
+• [react-loading-skeleton](https://www.npmjs.com/package/react-loading-skeleton "react loading skeleton")
+• [styled-components](https://styled-components.com/ "styled components")
   
 dev libraries:
 
-● [eslint](https://eslint.org "eslint")
-● [husky](https://github.com/typicode/husky#readme "husky")
-● [prettier](https://prettier.io "prettier")
-● [prettier-plugin-sort-imports](https://www.npmjs.com/package/@trivago/prettier-plugin-sort-imports "sort imports")
-● [jest](https://jestjs.io/ "jest")
-● [lint-staged](https://github.com/lint-staged/lint-staged#readme "lint staged")
+• [eslint](https://eslint.org "eslint")
+• [husky](https://github.com/typicode/husky#readme "husky")
+• [prettier](https://prettier.io "prettier")
+• [prettier-plugin-sort-imports](https://www.npmjs.com/package/@trivago/prettier-plugin-sort-imports "sort imports")
+• [jest](https://jestjs.io/ "jest")
+• [react-testing-library](https://github.com/testing-library/react-testing-library#readme "testing library")
+• [lint-staged](https://github.com/lint-staged/lint-staged#readme "lint staged")
 
 ## Steps to run
 **#1** To run the project, you just need to install the dependencies, you can use `yarn` or `npm`
