@@ -37,6 +37,18 @@ yarn start
 
 **#3** with the project started, in your browser, access  [http://localhost:3000/](http://localhost:3000/)
   
+## Steps to test
+**#1** In your terminal, after install the dependencies, you just need to run the tests command
+
+```bash
+yarn test
+```
+
+**#2** To see the tests coverage, run this script and it will automatically open the coverage in your browser
+
+```bash
+yarn coverage
+```
 
 ## What areas of the web app did you focus on?
 I tried to focus in the design consistency, that means: define the Design System, maping the colors, spacings and fonts. Also, I architected the project thinking in further improvements, as new pages, common components and data reuses. 
