@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { getThemeColor, getThemeFontFamily, getThemeFontSize, getThemeSpace, getThemeTransition } from '@theme/theme.utils';
+import { getThemeColor, getThemeFontFamily, getThemeFontSize, getThemeRadii, getThemeSpace, getThemeTransition } from '@theme/theme.utils';
 
 export const HomeScreenWrapper = styled.div`
   width: 100%;
@@ -31,6 +31,9 @@ export const HomeScreenListSearch = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+  max-width: 500px;
+  margin: 0 auto;
+  margin-bottom: ${getThemeSpace('lg')};
 `;
 
 export const HomeScreenList = styled.div`
@@ -52,6 +55,7 @@ export const HomeScreenListItem = styled.div`
   align-items: center;
   justify-content: center;
   gap: ${getThemeSpace('md')};
+  border-radius: ${getThemeRadii('md')};
   ${getThemeTransition('base')};
 
   &:hover {

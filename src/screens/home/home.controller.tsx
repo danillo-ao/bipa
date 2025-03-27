@@ -2,6 +2,7 @@
 
 import React from 'react';
 
+import { useDebounce } from '@hooks/use-debounce.hook';
 import { AxiosError } from 'axios';
 
 import { apiClient } from '@sdk/client';
@@ -13,23 +14,47 @@ import { HomeScreenControllerArgs } from './home.types';
 
 const HomeScreenController: ScreenController<HomeScreenControllerArgs> = ({ children }) => {
   // states
+
   const [loading, setLoading] = React.useState<boolean>(true);
   const [error, setError] = React.useState<boolean>(false);
   const [errorMessage, setErrorMessage] = React.useState<string | null>();
+
   const [data, setData] = React.useState<LightningConnectivityRankingData[]>([]);
+  const [originalData, setOriginalData] = React.useState<LightningConnectivityRankingData[]>([]);
+
+  const [filter, setFilter] = React.useState<string>('');
 
   // Handle states functions
+
+  const onChangeFilter = (value: string) => {
+    setFilter(value);
+    filterData(value);
+  };
 
   const defineError = (message: string) => {
     setError(true);
     setErrorMessage(message);
     setData([]);
+    setOriginalData([]);
   };
 
   const clearError = () => {
     setError(false);
     setErrorMessage(null);
   };
+
+  const filterData = useDebounce((value: string) => {
+    if (!value || value.length <= 0) {
+      setData(originalData);
+      return;
+    }
+
+    const _value = value.toLowerCase();
+
+    const filtered = originalData.filter(node => node.alias.toLowerCase().includes(_value) || node.publicKey.toLowerCase().includes(_value));
+    setData(filtered);
+    console.log({ filtered });
+  }, 400);
 
   // Fetch requests
 
@@ -39,6 +64,7 @@ const HomeScreenController: ScreenController<HomeScreenControllerArgs> = ({ chil
       if (result.data && result.status === 200) {
         clearError();
         setData(result.data);
+        setOriginalData(result.data);
       }
     } catch (err) {
       defineError((err as AxiosError).message);
@@ -47,16 +73,20 @@ const HomeScreenController: ScreenController<HomeScreenControllerArgs> = ({ chil
     }
   };
 
+  // Handle data functions
+
   const getNodeCountryLabel = (node: LightningConnectivityRankingData) => {
     return node.country?.['pt-BR'] ?? node.country?.['en'] ?? '--';
   };
 
   // use effects
+
   React.useEffect(() => {
     fetchLightningRankingsConnectivity();
   }, []);
 
   // render values
+
   const args: HomeScreenControllerArgs = {
     loading,
     error: {
@@ -64,9 +94,11 @@ const HomeScreenController: ScreenController<HomeScreenControllerArgs> = ({ chil
       message: errorMessage,
     },
     data,
+    filter,
 
     actions: {
       getNodeCountryLabel,
+      onChangeFilter,
     },
   };
 

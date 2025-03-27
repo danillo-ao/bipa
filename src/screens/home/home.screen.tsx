@@ -2,6 +2,7 @@
 
 import React from 'react';
 
+import { SearchInput } from '@components/form';
 import { ScreenWrapper } from '@components/screen';
 
 import { convertUnixDate } from '@utils/date.utils';
@@ -16,14 +17,15 @@ const HomeScreen: React.FC<HomeScreenProps> = () => {
   return (
     <ScreenWrapper>
       <HomeScreenController>
-        {({ data, actions }) => {
-          console.log({ data, actions });
+        {({ data, filter, actions }) => {
           return (
             <S.HomeScreenWrapper>
               <S.HomeScreenTitle>lightning nodes ranking</S.HomeScreenTitle>
 
               <S.HomeScreenListWrapper>
-                <S.HomeScreenListSearch />
+                <S.HomeScreenListSearch>
+                  <SearchInput value={filter} placeholder="Filtrar node..." onChange={actions.onChangeFilter} />
+                </S.HomeScreenListSearch>
 
                 <S.HomeScreenList>
                   {data.map(node => (

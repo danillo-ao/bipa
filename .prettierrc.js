@@ -16,6 +16,7 @@ module.exports = {
     '^@assets/(.*)$',
     '^@components/(.*)$',
     '^@configs/(.*)$',
+    '^@hooks/(.*)$',
     '^@lib/(.*)$',
     '^@screens/(.*)$',
     '^@sdk/(.*)$',
