@@ -5,8 +5,8 @@ export interface LightningConnectivityRankingData {
   capacity: number;
   firstSeen: number;
   updatedAt: number;
-  city: { [key: string]: string };
+  city: { [key: string]: string } | null;
   country: { [key: string]: string };
   iso_code: string;
-  subdivision: string;
+  subdivision: string | null;
 }

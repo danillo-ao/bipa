@@ -9,6 +9,7 @@ const SearchInput: React.FC<SearchInputProps> = ({ value, placeholder, onChange 
   return (
     <S.SearchInputWrapper>
       <S.SearchInput
+        data-testid="search-input"
         value={value}
         placeholder={placeholder}
         onChange={e => {

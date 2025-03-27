@@ -85,7 +85,7 @@ const HomeScreenController: ScreenController<HomeScreenControllerArgs> = ({ chil
   const copyPublicKeyToClipboard = async (publicKey: string) => {
     const promise = navigator.clipboard.writeText(publicKey);
     toast.promise(promise, {
-      loading: 'Loading',
+      loading: 'Copiando...',
       success: 'Chave pública copiada para área de transferência!',
       error: 'Não foi possivel copiar esta chave pública',
     });

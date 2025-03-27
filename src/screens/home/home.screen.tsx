@@ -54,6 +54,7 @@ const HomeScreen: React.FC<HomeScreenProps> = () => {
         key={node.publicKey}
         title={`${node.alias} - ${node.publicKey}`}
         onClick={() => actions.copyPublicKeyToClipboard(node.publicKey)}
+        role="node-list-item"
       >
         <S.NodeNameWrapper>
           <S.NodeName>{node.alias}</S.NodeName>
