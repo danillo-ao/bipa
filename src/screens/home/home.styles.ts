@@ -102,6 +102,7 @@ export const NodeDataColumn = styled.div`
   position: relative;
   flex-direction: column;
   gap: ${getThemeSpace('xs')};
+  justify-content: center;
 `;
 
 export const NodeDataTitle = styled.span`

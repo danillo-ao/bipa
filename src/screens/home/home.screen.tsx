@@ -15,28 +15,35 @@ import { convertSatsToBTC } from '@utils/maths.utils';
 import { maskPublicKey } from '@utils/string.utils';
 
 import { HomeScreenController } from './home.controller';
+import { HomeSkeleton } from './home.skeleton';
 import * as S from './home.styles';
 import { HomeScreenControllerArgs, HomeScreenProps } from './home.types';
 
 const HomeScreen: React.FC<HomeScreenProps> = () => {
-  const renderListData = ({ data, filtering, error, actions }: HomeScreenControllerArgs) => {
+  const renderListData = ({ data, loading, filtering, error, actions }: HomeScreenControllerArgs) => {
+    if (loading) {
+      return <HomeSkeleton />;
+    }
+
     if (error.status) {
       return (
         <S.ErrorCard>
           <Image src={errorImg} width={300} alt="request error picture" />
-          <S.ErrorCardMessage>Desculpe, não foi possivel carregar estar informações no momento.</S.ErrorCardMessage>
+          <S.ErrorCardMessage>Desculpe, não foi possivel carregar estas informações no momento.</S.ErrorCardMessage>
           <S.ErrorCardCode>{error.message}</S.ErrorCardCode>
         </S.ErrorCard>
       );
     }
 
-    if (filtering && data.length <= 0) {
+    if (data.length <= 0) {
+      const message = filtering
+        ? 'Nenhum resultado de busca foi encontrado. Verifique se o valor digitado corresponde à um Alias ou Public Key'
+        : 'Nenhum Dado da rede foi encontrado.';
+
       return (
         <S.ErrorCard>
           <Image src={notFoundImg} width={300} alt="not found picture" />
-          <S.ErrorCardMessage>
-            Nenhum resultado da busca foi encontrado. Verifique se o valor digitado corresponde à um Alias ou Public Key
-          </S.ErrorCardMessage>
+          <S.ErrorCardMessage>{message}</S.ErrorCardMessage>
         </S.ErrorCard>
       );
     }

@@ -54,7 +54,6 @@ const HomeScreenController: ScreenController<HomeScreenControllerArgs> = ({ chil
     }
 
     const _value = value.toLowerCase();
-
     const filtered = originalData.filter(node => node.alias.toLowerCase().includes(_value) || node.publicKey.toLowerCase().includes(_value));
     setData(filtered);
     setFiltering(true);
