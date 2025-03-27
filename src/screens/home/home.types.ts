@@ -12,6 +12,7 @@ export interface HomeScreenControllerArgs {
   actions: {
     getNodeCountryLabel(node: LightningConnectivityRankingData): string;
     onChangeFilter(value: string): void;
+    copyPublicKeyToClipboard(publicKey: string): void;
   };
 }
 

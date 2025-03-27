@@ -29,7 +29,11 @@ const HomeScreen: React.FC<HomeScreenProps> = () => {
 
                 <S.HomeScreenList>
                   {data.map(node => (
-                    <S.HomeScreenListItem key={node.publicKey} title={`${node.alias} - ${node.publicKey}`}>
+                    <S.HomeScreenListItem
+                      key={node.publicKey}
+                      title={`${node.alias} - ${node.publicKey}`}
+                      onClick={() => actions.copyPublicKeyToClipboard(node.publicKey)}
+                    >
                       <S.NodeNameWrapper>
                         <S.NodeName>{node.alias}</S.NodeName>
                       </S.NodeNameWrapper>

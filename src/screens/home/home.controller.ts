@@ -2,8 +2,10 @@
 
 import React from 'react';
 
-import { useDebounce } from '@hooks/use-debounce.hook';
 import { AxiosError } from 'axios';
+import toast from 'react-hot-toast';
+
+import { useDebounce } from '@hooks/use-debounce.hook';
 
 import { apiClient } from '@sdk/client';
 import { LightningConnectivityRankingData } from '@sdk/responses.types';
@@ -53,7 +55,6 @@ const HomeScreenController: ScreenController<HomeScreenControllerArgs> = ({ chil
 
     const filtered = originalData.filter(node => node.alias.toLowerCase().includes(_value) || node.publicKey.toLowerCase().includes(_value));
     setData(filtered);
-    console.log({ filtered });
   }, 400);
 
   // Fetch requests
@@ -79,6 +80,15 @@ const HomeScreenController: ScreenController<HomeScreenControllerArgs> = ({ chil
     return node.country?.['pt-BR'] ?? node.country?.['en'] ?? '--';
   };
 
+  const copyPublicKeyToClipboard = async (publicKey: string) => {
+    const promise = navigator.clipboard.writeText(publicKey);
+    toast.promise(promise, {
+      loading: 'Loading',
+      success: 'Chave pública copiada para área de transferência!',
+      error: 'Não foi possivel copiar esta chave pública',
+    });
+  };
+
   // use effects
 
   React.useEffect(() => {
@@ -99,6 +109,7 @@ const HomeScreenController: ScreenController<HomeScreenControllerArgs> = ({ chil
     actions: {
       getNodeCountryLabel,
       onChangeFilter,
+      copyPublicKeyToClipboard,
     },
   };
 
