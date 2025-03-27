@@ -6,7 +6,7 @@
     "clean": "rm -rf node_modules && yarn",
     "dev": "next dev --turbopack",
     "build": "next build",
-    "start": "next start",
+    "start": "yarn build && next start",
     "test": "jest --coverage",
     "coverage": "open ./coverage/lcov-report/index.html",
     "lint": "next lint --fix --no-cache && tsc --noemit",

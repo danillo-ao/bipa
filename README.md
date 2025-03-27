@@ -30,14 +30,22 @@ dev libraries:
 yarn
 ```
 
-**#2** then, start the project
+**#2** then, start the project. This command will build the production version of the app
 
 ```bash
 yarn start
 ```
 
+if you want to run it in the development mode, just use
+```bash
+yarn dev
+```
+
 **#3** with the project started, in your browser, access  [http://localhost:3000/](http://localhost:3000/)
   
+
+
+
 ## Steps to test
 **#1** In your terminal, after install the dependencies, you just need to run the tests command
 
